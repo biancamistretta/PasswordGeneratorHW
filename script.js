@@ -6,17 +6,18 @@ var generateBtn = document.querySelector("#generate");
                 alert("Please enter a valid password length between 8 and 128.");
                 return;
             }
-
+// define the question prompts:
             var includeLowercase = confirm("Include lowercase characters?");
             var includeUppercase = confirm("Include uppercase characters?");
             var includeNumbers = confirm("Include numeric characters?");
             var includeSpecialChars = confirm("Include special characters?");
 
+            // if they do not put an answer in the prompt:
             if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars) {
                 alert("At least one character type should be selected.");
                 return;
             }
-
+// define the choices for the question promots:
             var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
             var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var numberChars = "0123456789";
@@ -24,6 +25,8 @@ var generateBtn = document.querySelector("#generate");
             var allChars = "";
             var password = "";
 
+
+            //if statements:
             if (includeLowercase) {
                 allChars += lowercaseChars;
                 password += lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));
